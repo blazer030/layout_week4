@@ -4,6 +4,8 @@ const autoprefixer = require('autoprefixer');
 const minimist = require('minimist');
 const browserSync = require('browser-sync').create();
 const { envOptions } = require('./envOptions');
+const cssnano = require('gulp-cssnano');
+const rename = require('gulp-rename');
 
 let options = minimist(process.argv.slice(2), envOptions);
 //現在開發狀態
@@ -44,6 +46,27 @@ function sass() {
     .pipe($.sourcemaps.init())
     .pipe($.sass().on('error', $.sass.logError))
     .pipe($.postcss(plugins))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest(envOptions.style.path))
+    .pipe(
+      browserSync.reload({
+        stream: true,
+      }),
+    );
+}
+
+function minsass() {
+  const plugins = [
+    autoprefixer(),
+  ];
+  return gulp.src(envOptions.style.src)
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
+    .pipe($.postcss(plugins))
+    .pipe(cssnano({
+      safe: true
+    }))
+    .pipe(rename({suffix: '.min' }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(envOptions.style.path))
     .pipe(
@@ -104,12 +127,13 @@ function watch() {
   gulp.watch(envOptions.javascript.src, gulp.series(babel));
   gulp.watch(envOptions.img.src, gulp.series(copyFile));
   gulp.watch(envOptions.style.src, gulp.series(sass));
+  gulp.watch(envOptions.style.src, gulp.series(minsass));
 }
 
 exports.deploy = deploy;
 
 exports.clean = clean;
 
-exports.build = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorsJs);
+exports.build = gulp.series(clean, copyFile, layoutHTML, sass, minsass, babel, vendorsJs);
 
-exports.default = gulp.series(clean, copyFile, layoutHTML, sass, babel, vendorsJs, gulp.parallel(browser, watch));
+exports.default = gulp.series(clean, copyFile, layoutHTML, sass, minsass, babel, vendorsJs, gulp.parallel(browser, watch));
