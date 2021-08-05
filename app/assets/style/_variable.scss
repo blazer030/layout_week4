@@ -1,0 +1,16 @@
+$font-family-base: 'Roboto', 'Noto Serif TC', serif;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$spacer: 1rem;
+
+//color
+$primary:  #AA0601;
+$secondary: #FBF2F2;

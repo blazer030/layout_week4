@@ -1,0 +1,201 @@
+.d-flex {
+    display: flex;
+}
+
+.d-inline-flex {
+    display: inline-flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: row;
+}
+
+.flex-column-reverse {
+    flex-direction: row-reverse;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.align-items-start {
+    align-items: start;
+}
+
+.align-items-end {
+    align-items: end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-self-start{
+    align-self: start;
+}
+
+.align-self-end{
+    align-self: end;
+}
+
+.align-self-center{
+    align-self: center;
+}
+
+@each $key in 0,1,2,3,4,6,8,11 {
+    //margin
+    .mt-#{$key} {
+        margin-top: $spacer*$key*.25;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: $spacer*$key*.25;
+    }
+
+    .ms-#{$key} {
+        margin-left: $spacer*$key*.25;
+    }
+
+    .me-#{$key} {
+        margin-right: $spacer*$key*.25;
+    }
+
+    .mx-#{$key} {
+        margin-left: $spacer*$key*.25;
+        margin-right: $spacer*$key*.25;
+    }
+
+    .my-#{$key} {
+        margin-top: $spacer*$key*.25;
+        margin-bottom: $spacer*$key*.25;
+    }
+
+    //padding
+    .pt-#{$key} {
+        padding-top: $spacer*$key*.25;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: $spacer*$key*.25;
+    }
+
+    .ps-#{$key} {
+        padding-left: $spacer*$key*.25;
+    }
+
+    .pe-#{$key} {
+        padding-right: $spacer*$key*.25;
+    }
+
+    .px-#{$key} {
+        padding-left: $spacer*$key*.25;
+        padding-right: $spacer*$key*.25;
+    }
+
+    .py-#{$key} {
+        padding-top: $spacer*$key*.25;
+        padding-bottom: $spacer*$key*.25;
+    }
+}
+
+.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@each $breakpoints, $min-width in $grid-breakpoints {
+    @media (min-width: $min-width) {
+        .d-#{$breakpoints}-flex {
+            display: flex;
+        }
+
+        .d-#{$breakpoints}-inline-flex {
+            display: inline-flex;
+        }
+
+        .flex-#{$breakpoints}-row {
+            flex-direction: row;
+        }
+
+        .flex-#{$breakpoints}-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .flex-#{$breakpoints}-column {
+            flex-direction: row;
+        }
+
+        .flex-#{$breakpoints}-column-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .justify-content-#{$breakpoints}-start {
+            justify-content: flex-start;
+        }
+
+        .justify-content-#{$breakpoints}-end {
+            justify-content: flex-end;
+        }
+
+        .justify-content-#{$breakpoints}-center {
+            justify-content: center;
+        }
+
+        .justify-content-#{$breakpoints}-between {
+            justify-content: space-between;
+        }
+
+        .justify-content-#{$breakpoints}-around {
+            justify-content: space-around;
+        }
+
+        .align-items-#{$breakpoints}-start {
+            align-items: start;
+        }
+        
+        .align-items-#{$breakpoints}-end {
+            align-items: end;
+        }
+        
+        .align-items-#{$breakpoints}-center {
+            align-items: center;
+        }
+
+        .align-self-#{$breakpoints}-start{
+            align-self: start;
+        }
+        
+        .align-self-#{$breakpoints}-end{
+            align-self: end;
+        }
+        
+        .align-self-#{$breakpoints}-center{
+            align-self: center;
+        }
+    }
+}

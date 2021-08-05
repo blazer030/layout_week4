@@ -1,0 +1,15 @@
+*, *:befor, *:after  {
+	box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family-base;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
