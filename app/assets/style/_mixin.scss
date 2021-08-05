@@ -1,0 +1,11 @@
+@mixin tablet {
+    @media(max-width:map-get($grid-breakpoints, "lg")-1) {
+        @content;
+    };
+};
+
+@mixin mobile {
+    @media(max-width:map-get($grid-breakpoints, "md")-1) {
+        @content;
+    };
+};

@@ -1,3 +1,30 @@
 .container {
-    width: 1110px;
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        background: $value;
+    }
+    
+    .text-#{$color} {
+        color: $value;
+    }
+}
+
+.nav {
+    padding: 0 88px;
+    a {
+        font-size: $h5-font-size;
+    }
+
+    @include tablet {
+        padding: 0 39px;
+    }
+
+    @include mobile {
+        padding: 0px;
+    }
 }

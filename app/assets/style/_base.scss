@@ -4,6 +4,7 @@
 
 body {
     font-family: $font-family-base;
+    line-height: 1.5;
 }
 
 img {
@@ -12,4 +13,5 @@ img {
 
 a {
     text-decoration: none;
+    color: inherit;
 }

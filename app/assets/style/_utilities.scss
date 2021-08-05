@@ -1,70 +1,4 @@
-.d-flex {
-    display: flex;
-}
 
-.d-inline-flex {
-    display: inline-flex;
-}
-
-.flex-row {
-    flex-direction: row;
-}
-
-.flex-row-reverse {
-    flex-direction: row-reverse;
-}
-
-.flex-column {
-    flex-direction: row;
-}
-
-.flex-column-reverse {
-    flex-direction: row-reverse;
-}
-
-.justify-content-start {
-    justify-content: flex-start;
-}
-
-.justify-content-end {
-    justify-content: flex-end;
-}
-
-.justify-content-center {
-    justify-content: center;
-}
-
-.justify-content-between {
-    justify-content: space-between;
-}
-
-.justify-content-around {
-    justify-content: space-around;
-}
-
-.align-items-start {
-    align-items: start;
-}
-
-.align-items-end {
-    align-items: end;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.align-self-start{
-    align-self: start;
-}
-
-.align-self-end{
-    align-self: end;
-}
-
-.align-self-center{
-    align-self: center;
-}
 
 @each $key in 0,1,2,3,4,6,8,11 {
     //margin
@@ -127,9 +61,85 @@
     margin-left: auto;
 }
 
+.d-flex {
+    display: flex;
+}
 
-@each $breakpoints, $min-width in $grid-breakpoints {
-    @media (min-width: $min-width) {
+.d-inline-flex {
+    display: inline-flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.align-items-start {
+    align-items: start;
+}
+
+.align-items-end {
+    align-items: end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-self-start{
+    align-self: start;
+}
+
+.align-self-end{
+    align-self: end;
+}
+
+.align-self-center{
+    align-self: center;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+@each $breakpoints, $max-width in $grid-breakpoints {
+    @media (max-width: $max-width) {
         .d-#{$breakpoints}-flex {
             display: flex;
         }
@@ -147,11 +157,11 @@
         }
 
         .flex-#{$breakpoints}-column {
-            flex-direction: row;
+            flex-direction: column;
         }
 
         .flex-#{$breakpoints}-column-reverse {
-            flex-direction: row-reverse;
+            flex-direction: column-reverse;
         }
 
         .justify-content-#{$breakpoints}-start {
@@ -196,6 +206,14 @@
         
         .align-self-#{$breakpoints}-center{
             align-self: center;
+        }
+
+        .flex-#{$breakpoints}-nowrap {
+            flex-wrap: nowrap;
+        }
+        
+        .flex-#{$breakpoints}-wrap {
+            flex-wrap: wrap;
         }
     }
 }

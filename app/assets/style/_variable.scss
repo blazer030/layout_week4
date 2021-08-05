@@ -1,16 +1,34 @@
 $font-family-base: 'Roboto', 'Noto Serif TC', serif;
 
+$font-size-base: 1rem; //16px
+
+$font-size-sm: $font-size-base * 0.875; //14px
+
+$h1-font-size: $font-size-base * 4; //64px
+$h2-font-size: $font-size-base * 3; //48px
+$h3-font-size: $font-size-base * 1.75; //28px
+$h4-font-size: $font-size-base * 1.5; //24px
+$h5-font-size: $font-size-base * 1.25; //20px
+$h6-font-size: $font-size-base; //16px
+
+
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
+  lg: 1200px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
+  sm: 576px,
+  xs: 0
 );
 
 $spacer: 1rem;
 
 //color
 $primary:  #AA0601;
+$primary-light: #AA06010D;
+$primary-dark: #650300;
 $secondary: #FBF2F2;
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "white": white
+)
