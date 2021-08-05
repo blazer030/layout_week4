@@ -1,6 +1,4 @@
-
-
-@each $key in 0,1,2,3,4,6,8,11 {
+@for $key from 0 to 13 {
     //margin
     .mt-#{$key} {
         margin-top: $spacer*$key*.25;
@@ -56,6 +54,69 @@
     }
 }
 
+@each $breakpoints, $value in reverse($grid-breakpoints) {
+    $next: breakpoint-next($breakpoints);
+    @if $next != null {
+        @include media-breakpoint-down($next) {
+            @for $key from 0 to 13 {
+                //margin
+                .mt-#{$breakpoints}-#{$key} {
+                    margin-top: $spacer*$key*.25;
+                }
+            
+                .mb-#{$breakpoints}-#{$key} {
+                    margin-bottom: $spacer*$key*.25;
+                }
+            
+                .ms-#{$breakpoints}-#{$key} {
+                    margin-left: $spacer*$key*.25;
+                }
+            
+                .me-#{$breakpoints}-#{$key} {
+                    margin-right: $spacer*$key*.25;
+                }
+            
+                .mx-#{$breakpoints}-#{$key} {
+                    margin-left: $spacer*$key*.25;
+                    margin-right: $spacer*$key*.25;
+                }
+            
+                .my-#{$breakpoints}-#{$key} {
+                    margin-top: $spacer*$key*.25;
+                    margin-bottom: $spacer*$key*.25;
+                }
+            
+                //padding
+                .pt-#{$breakpoints}-#{$key} {
+                    padding-top: $spacer*$key*.25;
+                }
+            
+                .pb-#{$breakpoints}-#{$key} {
+                    padding-bottom: $spacer*$key*.25;
+                }
+            
+                .ps-#{$breakpoints}-#{$key} {
+                    padding-left: $spacer*$key*.25;
+                }
+            
+                .pe-#{$breakpoints}-#{$key} {
+                    padding-right: $spacer*$key*.25;
+                }
+            
+                .px-#{$breakpoints}-#{$key} {
+                    padding-left: $spacer*$key*.25;
+                    padding-right: $spacer*$key*.25;
+                }
+            
+                .py-#{$breakpoints}-#{$key} {
+                    padding-top: $spacer*$key*.25;
+                    padding-bottom: $spacer*$key*.25;
+                }
+            }
+        }
+    }
+}
+
 .mx-auto {
     margin-right: auto;
     margin-left: auto;
@@ -106,11 +167,11 @@
 }
 
 .align-items-start {
-    align-items: start;
+    align-items: flex-start;
 }
 
 .align-items-end {
-    align-items: end;
+    align-items: flex-end;
 }
 
 .align-items-center {
@@ -138,82 +199,104 @@
 }
 
 
-@each $breakpoints, $max-width in $grid-breakpoints {
-    @media (max-width: $max-width) {
-        .d-#{$breakpoints}-flex {
-            display: flex;
+@each $breakpoints, $value in reverse($grid-breakpoints) {
+    $next: breakpoint-next($breakpoints);
+    @if $next != null {
+        @include media-breakpoint-down($next) {
+            .d-#{$breakpoints}-flex {
+                display: flex;
+            }
+    
+            .d-#{$breakpoints}-inline-flex {
+                display: inline-flex;
+            }
+    
+            .flex-#{$breakpoints}-row {
+                flex-direction: row;
+            }
+    
+            .flex-#{$breakpoints}-row-reverse {
+                flex-direction: row-reverse;
+            }
+    
+            .flex-#{$breakpoints}-column {
+                flex-direction: column;
+            }
+    
+            .flex-#{$breakpoints}-column-reverse {
+                flex-direction: column-reverse;
+            }
+    
+            .justify-content-#{$breakpoints}-start {
+                justify-content: flex-start;
+            }
+    
+            .justify-content-#{$breakpoints}-end {
+                justify-content: flex-end;
+            }
+    
+            .justify-content-#{$breakpoints}-center {
+                justify-content: center;
+            }
+    
+            .justify-content-#{$breakpoints}-between {
+                justify-content: space-between;
+            }
+    
+            .justify-content-#{$breakpoints}-around {
+                justify-content: space-around;
+            }
+    
+            .align-items-#{$breakpoints}-start {
+                align-items: flex-start;
+            }
+            
+            .align-items-#{$breakpoints}-end {
+                align-items: flex-end;
+            }
+            
+            .align-items-#{$breakpoints}-center {
+                align-items: center;
+            }
+    
+            .align-self-#{$breakpoints}-start{
+                align-self: start;
+            }
+            
+            .align-self-#{$breakpoints}-end{
+                align-self: end;
+            }
+            
+            .align-self-#{$breakpoints}-center{
+                align-self: center;
+            }
+    
+            .flex-#{$breakpoints}-nowrap {
+                flex-wrap: nowrap;
+            }
+            
+            .flex-#{$breakpoints}-wrap {
+                flex-wrap: wrap;
+            }
         }
+    }
+}
 
-        .d-#{$breakpoints}-inline-flex {
-            display: inline-flex;
-        }
+@each $key in 1,2,3,4 {
+    .w-#{$key*25} {
+        width: $key*25%;
+    }
+}
 
-        .flex-#{$breakpoints}-row {
-            flex-direction: row;
-        }
-
-        .flex-#{$breakpoints}-row-reverse {
-            flex-direction: row-reverse;
-        }
-
-        .flex-#{$breakpoints}-column {
-            flex-direction: column;
-        }
-
-        .flex-#{$breakpoints}-column-reverse {
-            flex-direction: column-reverse;
-        }
-
-        .justify-content-#{$breakpoints}-start {
-            justify-content: flex-start;
-        }
-
-        .justify-content-#{$breakpoints}-end {
-            justify-content: flex-end;
-        }
-
-        .justify-content-#{$breakpoints}-center {
-            justify-content: center;
-        }
-
-        .justify-content-#{$breakpoints}-between {
-            justify-content: space-between;
-        }
-
-        .justify-content-#{$breakpoints}-around {
-            justify-content: space-around;
-        }
-
-        .align-items-#{$breakpoints}-start {
-            align-items: start;
-        }
-        
-        .align-items-#{$breakpoints}-end {
-            align-items: end;
-        }
-        
-        .align-items-#{$breakpoints}-center {
-            align-items: center;
-        }
-
-        .align-self-#{$breakpoints}-start{
-            align-self: start;
-        }
-        
-        .align-self-#{$breakpoints}-end{
-            align-self: end;
-        }
-        
-        .align-self-#{$breakpoints}-center{
-            align-self: center;
-        }
-
-        .flex-#{$breakpoints}-nowrap {
-            flex-wrap: nowrap;
-        }
-        
-        .flex-#{$breakpoints}-wrap {
-            flex-wrap: wrap;
+@each $breakpoints, $value in reverse($grid-breakpoints) {
+    $next: breakpoint-next($breakpoints);
+    @if $next != null {
+        @include media-breakpoint-down($next) {
+            @each $key in 1,2,3,4 {
+                .w-#{$breakpoints}-#{$key*25} {
+                    width: $key*25%;
+                }
+            }
         }
     }
 }
