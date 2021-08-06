@@ -1,0 +1,39 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    li {
+        border: 1px solid #555555;
+        &:not(:last-child) {
+            border-right: 0px;
+        }
+
+        &.active, &:hover:not(.disabled) {
+            color: white;
+            background-color: black;
+        }
+
+        &:empty {
+            padding: $spacer*0.75 $spacer;
+        }
+
+        &.disabled {
+            background-color: #f2f2f2;
+            cursor: not-allowed;
+        }
+    }
+
+    span {
+        display: block;
+    }
+
+    a, span {
+        padding: $spacer*0.75 $spacer;
+    }
+
+    .prev, .next  {
+        a, span {
+            padding: $spacer*0.75 $spacer*0.75;
+        }
+    }
+}

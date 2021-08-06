@@ -122,6 +122,18 @@
     margin-left: auto;
 }
 
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline {
+    display: inline;
+}
+
 .d-flex {
     display: flex;
 }
@@ -203,6 +215,18 @@
     $next: breakpoint-next($breakpoints);
     @if $next != null {
         @include media-breakpoint-down($next) {
+            .d-#{$breakpoints}-none {
+                display: none;
+            }
+
+            .d-#{$breakpoints}-block {
+                display: block;
+            }
+            
+            .d-#{$breakpoints}-inline {
+                display: inline;
+            }
+
             .d-#{$breakpoints}-flex {
                 display: flex;
             }

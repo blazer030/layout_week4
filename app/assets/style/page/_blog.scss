@@ -1,0 +1,83 @@
+.blog {
+    padding: $spacer*2.5 0 $spacer*10 0;
+
+    @include tablet {
+        padding: $spacer*2 $spacer*1.5 $spacer*6 $spacer*1.5;
+    }
+
+    @include mobile {
+        padding: $spacer*1.75 0 $spacer*3.5 0;
+    }
+}
+
+.blog-nav {
+    font-size: $h5-font-size;
+    a {
+        padding: $spacer*0.75 $spacer*1.5;
+        &:hover {
+            background-color: $primary;
+        }
+    }
+
+    .active a {
+        background-color: $primary;
+    }
+}
+
+.article-image {
+    width: 60%;
+    img {
+        width: 100%
+    }
+
+    @include tablet {
+        width: 55%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.article-info {
+    width: 40%;
+    .title {
+        font-size: $font-size-base*2;
+    }
+
+    .more {
+        align-self: flex-end;
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    @include tablet {
+        width: 45%;
+
+        .title {
+            font-size: $h5-font-size;
+        }
+        
+        .e-title {
+            font-size: $font-size-base;
+        }
+
+        .summary, .date {
+            font-size: $font-size-sm;
+        }
+    }
+
+    @include mobile {
+        width: 100%;
+
+        .title {
+            font-size: $font-size-base;
+        }
+        
+        .e-title {
+            font-size: $font-size-sm;
+        }
+    }
+}
+

@@ -12,6 +12,15 @@ body {
     body {
         font-size: $font-size-sm;
     }
+
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    main {
+        padding-top: 145px;
+    }
 }
 
 img {
@@ -19,6 +28,7 @@ img {
     height: auto;
     vertical-align: middle;
 }
+
 
 a {
     display: block;
