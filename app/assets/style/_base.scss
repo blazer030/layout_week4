@@ -4,7 +4,14 @@
 
 body {
     font-family: $font-family-base;
+    font-size: $font-size-base;
     line-height: 1.5;
+}
+
+@include mobile {
+    body {
+        font-size: $font-size-sm;
+    }
 }
 
 img {
@@ -18,3 +25,10 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+@each $key, $font-size in $font-sizes {
+    h#{$key}, .h#{$key} {
+        font-size: $font-size;
+    }
+}
+

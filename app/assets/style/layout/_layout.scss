@@ -1,0 +1,33 @@
+.container {
+    max-width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        background: $value;
+    }
+    
+    .text-#{$color} {
+        color: $value;
+    }
+}
+
+.page-title {
+    font-size: $h2-font-size;
+    padding-left: $spacer;
+    border-left: 8px solid $primary;
+    font-weight: bold;
+
+    @include mobile {
+        font-size: $font-size-base*1.75;
+    }
+}
+
+@import "header";
+@import "footer";
+
+
+

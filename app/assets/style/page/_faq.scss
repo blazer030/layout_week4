@@ -1,0 +1,39 @@
+.faq {
+    padding: $spacer*6 0 $spacer*8 0;
+
+    .sub-title {
+        font-size: $font-size-base*2;
+        font-weight: bold;
+    }
+
+    .question p {
+        padding-left: $spacer*6;
+    }
+
+    @include tablet {
+        padding: $spacer*3.75 $spacer*1.5 $spacer*4.5 $spacer*1.5;
+
+        .question p {
+            padding-left: $spacer*3.75;
+        }
+    }
+
+    @include mobile {
+        padding: $spacer*1.75 0 $spacer*2.25 0;
+
+        .sub-title {
+            font-size: $h5-font-size;
+        }
+        
+        .question .title {
+            font-size: $font-size-base;
+        }
+        
+        .question p {
+            padding-left: 0;
+            &:not(:last-child) {
+                margin-bottom: $spacer*1.25;
+            }
+        }
+    }
+}

@@ -17,26 +17,28 @@
         <a href="index.html"><img src="https://hexschool.github.io/webLayoutTraining1st/week3/logo.png" alt="logo"></a>
       </div>
       <ul class="menu d-flex justify-content-around text-white w-sm-100 flex-sm-wrap">
-        <li class="w-sm-50 <% if (current == 'product') {%> active <%}%>"><a href="product.html">系列鏡框</a></li>
+        <li class="w-sm-50 <% if (current == 'product') {%> active <%}%>"><a href="products.html">系列鏡框</a></li>
         <li class="w-sm-50 <% if (current == 'location') {%> active <%}%>"><a href="location.html">門市據點</a></li>
-        <li class="w-sm-50 <% if (current == 'blog') {%> active <%}%>"><a href="blog.html">部落格</a></li>
-        <li class="w-sm-50 <% if (current == 'qa') {%> active <%}%>"><a href="qa.html">常見問題</a></li>
+        <li class="w-sm-50 <% if (current == 'blog') {%> active <%}%>"><a href="blogs.html">部落格</a></li>
+        <li class="w-sm-50 <% if (current == 'faq') {%> active <%}%>"><a href="faq.html">常見問題</a></li>
       </ul>
     </div>
   </header>
   
-  <%- contents %>
+  <main class="<%- current %>">
+    <%- contents %>
+  </main>
 
-  <footer class="footer bg-primary">
+  <footer class="footer bg-primary py-8 px-lg-6 py-sm-6 px-sm-0">
     <div class="container text-white">
       <div class="about d-flex justify-content-between align-items-start">
         <div class="d-flex flex-column">
           <ul class="menu d-flex mb-6">
-            <li><a href="index.html">首頁</a></li>
-            <li><a href="product.html">系列鏡框</a></li>
-            <li><a href="location.html">門市據點</a></li>
-            <li><a href="blog.html">部落格</a></li>
-            <li><a href="qa.html">常見問題</a></li>
+            <li class="me-12"><a href="index.html">首頁</a></li>
+            <li class="me-12"><a href="product.html">系列鏡框</a></li>
+            <li class="me-12"><a href="location.html">門市據點</a></li>
+            <li class="me-12"><a href="blogs.html">部落格</a></li>
+            <li><a href="faq.html">常見問題</a></li>
           </ul>
           <ul class="contact">
             <li class="mb-4 mb-lg-3"><a href="tel:0800000000"><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-phone.svg" alt="phone" class="me-4 me-lg-2 me-sm-1">0800-000-000</a></li>
@@ -45,8 +47,8 @@
         </div>
         <ul class="social d-flex">
           <li><a href=""><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-fb.svg" alt="fb"></a></li>
-          <li><a href=""><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-ig.svg" alt="ig"></a></li>
-          <li><a href=""><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-line.svg" alt="line"></a></li>
+          <li class="ms-8 ms-lg-6"><a href=""><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-ig.svg" alt="ig"></a></li>
+          <li class="ms-8 ms-lg-6"><a href=""><img src="https://hexschool.github.io/webLayoutTraining1st/week3/icon-line.svg" alt="line"></a></li>
         </ul>
       </div>
       <div class="d-flex flex-sm-column justify-content-between align-items-end align-items-sm-start pt-8 pt-lg-6 pt-sm-4">

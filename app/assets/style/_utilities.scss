@@ -1,4 +1,4 @@
-@for $key from 0 to 13 {
+@for $key from 0 to 16 {
     //margin
     .mt-#{$key} {
         margin-top: $spacer*$key*.25;
@@ -58,7 +58,7 @@
     $next: breakpoint-next($breakpoints);
     @if $next != null {
         @include media-breakpoint-down($next) {
-            @for $key from 0 to 13 {
+            @for $key from 0 to 16 {
                 //margin
                 .mt-#{$breakpoints}-#{$key} {
                     margin-top: $spacer*$key*.25;
@@ -299,4 +299,28 @@
             }
         }
     }
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+.fw-bolder {
+    font-weight: bolder;
+}
+
+.fw-normal {
+    font-weight: normal;
+}
+
+.fw-lighter {
+    font-weight: lighter;
+}
+
+.fst-italic {
+    font-style: italic;
+}
+
+.fst-normal {
+    font-style: normal;
 }

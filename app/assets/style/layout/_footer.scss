@@ -1,0 +1,51 @@
+.footer {
+    .about {
+        border-bottom: 1px solid white;
+    }
+    
+    .contact {
+        a {
+            font-size: $h3-font-size;
+        }
+
+        img {
+            height: 44px;
+            width: 44px;    
+        }
+    }
+
+    .policy a {
+        font-size: $font-size-sm;
+    }
+
+    @include tablet {
+        .social {
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+        
+        .contact {
+            a {
+                font-size: $h5-font-size;
+            }
+
+            img {
+                height: 20px;
+                width: 20px;  
+            }
+        }
+    }
+
+    
+    @include mobile {
+        .menu {
+            display: none;
+        }
+        
+        .contact a {
+            font-size: $font-size-base;
+        }
+    }
+}
