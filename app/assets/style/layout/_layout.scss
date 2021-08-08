@@ -20,9 +20,15 @@
     padding-left: $spacer;
     border-left: 8px solid $primary;
     font-weight: bold;
+    margin-bottom: $spacer*3.75;
+
+    @include tablet {
+        margin-bottom: $spacer*2.5;
+    }
 
     @include mobile {
         font-size: $font-size-base*1.75;
+        margin-bottom: $spacer*1.5;
     }
 }
 

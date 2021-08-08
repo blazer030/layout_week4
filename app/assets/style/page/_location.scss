@@ -1,0 +1,131 @@
+.location {
+    padding: $spacer*6 0 $spacer*10 0;
+
+    @include tablet {
+        padding: $spacer*3.75 $spacer*1.5 $spacer*6 $spacer*1.5;
+    }
+
+    @include mobile {
+        padding: $spacer*1.75 0 $spacer*3.25 0;
+    }
+}
+
+.filter {
+    font-size: $h4-font-size;
+    select {
+        width: 324px;
+        padding: $spacer*0.625 $spacer*1.25;
+        font-size: $font-size-base*1.125;
+    }
+
+    @include tablet {
+        font-size: $font-size-base;
+        select {
+            width: 237px;
+            padding: $spacer*0.625 $spacer;
+            font-size: $font-size-base;
+        }
+    }
+
+    @include mobile {
+        font-size: $font-size-sm;
+        select {
+            width: 80%;
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+.location-item {
+    width: calc((100% - 60px)/3);
+    margin-right: 30px;
+    &:nth-child(3n) {
+        margin-right: 0px;
+    }
+
+    .title, .content {
+        padding: $spacer*0.75 $spacer*1.5;
+        border: 1px solid #00000020;
+    }
+    
+    .title {
+        font-size: $h4-font-size;
+    }
+    
+    .content {
+        font-size: $h5-font-size;
+    }
+
+    .footer a{
+        text-align: center;
+        padding: $spacer*1.25 0;
+        background: black;
+        color: white;
+        font-size: 19px;
+    }
+
+    @include tablet {
+        width: calc((100% - 30px)/2);
+        &:nth-child(3n) {
+            margin-right: 30px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0px;
+        }
+    
+        .title {
+            font-size: $font-size-base;
+            padding: $spacer*0.5 $spacer*1.5;
+        }
+    
+        .content {
+            font-size: $font-size-sm;
+            padding: $spacer $spacer*1.5;
+        }
+
+        .footer a{
+            padding: $spacer 0;
+            font-size: $font-size-sm;
+        }
+    }
+
+    @include mobile {
+        width: 100%;
+        margin-right: 0px;
+        &:nth-child(3n) {
+            margin-right: 0px;
+        }
+    }
+}
+
+
+
+.location-info {
+    li {
+        display: flex;
+        align-items: flex-start;
+        &:not(:last-child) {
+            margin-bottom: $spacer*0.5;
+        }
+    }
+    .icon {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        margin-right: $spacer*0.5;
+    }
+    p {
+        display: block;
+        width: calc(100% - 30px);
+    }
+
+    @include tablet {
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+        p {
+            width: calc(100% - 20px);
+        }
+    }
+}
