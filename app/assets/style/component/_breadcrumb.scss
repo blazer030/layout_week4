@@ -1,0 +1,26 @@
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0;
+    margin: 0.5rem 0;
+    a {
+        display: inline;
+    }
+}
+
+.breadcrumb-item+.breadcrumb-item {
+    padding-left: .25rem;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: .25rem;
+    color: #6c757d;
+    content: "/";
+}
+
+.breadcrumb-item {
+    &.active, & a:hover {
+        color: $primary;
+    }
+}

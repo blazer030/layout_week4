@@ -1,4 +1,4 @@
-.blog {
+.blogs {
     padding: $spacer*2.5 0 $spacer*10 0;
 
     @include tablet {
@@ -10,10 +10,20 @@
     }
 }
 
+.blog {
+    padding-bottom: $spacer*10;
+
+    @include tablet {
+        padding: 0 $spacer*1.5 $spacer*6 $spacer*1.5;
+    }
+
+    @include mobile {
+        padding: 0 0 $spacer*3.5 0;
+    }
+}
+
 .blog-nav {
-    font-size: $h5-font-size;
     a {
-        padding: $spacer*0.75 $spacer*1.5;
         &:hover {
             background-color: $primary;
         }
@@ -21,6 +31,48 @@
 
     .active a {
         background-color: $primary;
+    }
+}
+
+.blog-menu {
+    font-size: $h5-font-size;
+
+    a {
+        padding: $spacer*0.75 $spacer*1.5;
+    }
+
+    @include tablet {
+        font-size: $font-size-base;
+
+        a {
+            padding: $spacer;
+        }
+    }
+
+    @include mobile {
+        font-size: $font-size-base;
+
+        a {
+            padding: $spacer 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.blog-search {
+    img {
+        height: 30px;
+        width: 30px;
+    }
+    padding: $spacer*0.75 $spacer*1.5;
+
+    @include tablet {
+        img {
+            height: 23px;
+            width: 23px;
+        }
+        padding: $spacer;
     }
 }
 
@@ -81,3 +133,94 @@
     }
 }
 
+.blog-tag {
+    font-size: $h4-font-size;
+
+    @include tablet {
+        font-size: $font-size-base;
+    }
+
+    @include mobile {
+        font-size: $font-size-sm;
+    }
+}
+
+.tags-title {
+    font-size: $font-size-md;
+    @include tablet {
+        font-size: $h5-font-size;
+        img {
+            width: 24px;
+        }
+    }
+}
+
+.tags-list {
+    li {
+        font-size: $h4-font-size;
+        margin-right: $spacer*1.5;
+
+        @include tablet {
+            font-size: $font-size-base;
+            margin-right: $spacer;
+        }
+        
+        @include mobile {
+            margin-right: $spacer*.5;
+        }
+    }
+}
+
+.blog-title {
+    font-size: $h2-font-size;
+
+    @include tablet {
+        font-size: $font-size-lg;
+    }
+    
+    @include mobile {
+        font-size: $h5-font-size;
+        color: $primary-dark;
+    }
+}
+
+.blog-e-title {
+    font-size: $font-size-md;
+
+    @include tablet {
+        font-size: $font-size-base;
+    }
+    
+    @include mobile {
+        font-size: $font-size-sm;
+    }
+}
+
+.blog-content {
+    font-size: $h5-font-size;
+    img {
+        margin-bottom: $spacer*1.5;
+    }
+    p {
+        margin-bottom: $spacer*2.5;
+    }
+
+    @include tablet {
+        font-size: $font-size-base;
+        img {
+            margin-bottom: $spacer;
+        }
+        p {
+            margin-bottom: $spacer*1.5;
+        }
+    }
+}
+
+.blog-share {
+    font-size: $h5-font-size;
+    border-bottom: 1px solid $gray;
+
+    @include tablet {
+        font-size: $font-size-base;
+    }
+}

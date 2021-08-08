@@ -2,6 +2,8 @@ $font-family-base: 'Roboto', 'Noto Serif TC', serif;
 
 $font-size-base: 1rem; //16px
 
+$font-size-lg: $font-size-base * 2; //32px
+$font-size-md: $font-size-base * 1.75; //28px
 $font-size-sm: $font-size-base * 0.875; //14px
 
 $h1-font-size: $font-size-base * 4; //64px
@@ -35,12 +37,14 @@ $primary:  #AA0601;
 $primary-light: #AA06010D;
 $primary-dark: #650300;
 $secondary: #FBF2F2;
+$white: white;
+$gray: #555555;
 
 $theme-colors: (
     "primary": $primary,
     "primary-light": $primary-light,
     "primary-dark": $primary-dark,
     "secondary": $secondary,
-    "white": white,
-    "gray": #555555
+    "white": $white,
+    "gray": $gray
 )
