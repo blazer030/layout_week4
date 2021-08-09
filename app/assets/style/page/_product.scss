@@ -1,0 +1,192 @@
+.product {
+    &.product-list {
+        padding-top: $spacer*3.5;
+        padding-bottom: $spacer*6;
+    }
+
+    @include tablet {
+        padding: 0 $spacer*1.5;
+    }
+
+    @include mobile {
+        padding: 0;
+        &.product-list {
+            padding-top: $spacer*2;
+            padding-bottom: $spacer*3.5;
+        }
+    }
+}
+
+.category-item {
+    width: calc(100% / 3);
+    display: flex;
+    border-left: 1px solid #DCDCDC;
+    &:last-child {
+        border-right: 1px solid #DCDCDC;
+    }
+
+    a {
+        padding-top: $spacer*1.5;
+        width: 100%;
+        text-align: center;
+        font-size: $font-size-lg;
+        &:after {
+            content: '';
+            display: block;
+            width: 0%;
+            height: 8px;
+            margin-top: $spacer;
+            background-color: $primary;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+        
+        img {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+    }
+
+    &.active a:after {
+        width: 100%;
+    }
+
+    @include tablet {
+        a {
+            padding-top: $spacer;
+            font-size: $h4-font-size;
+            &:after {
+                margin-top: $spacer*0.5;
+            }
+
+            img {
+                width: 32px;
+                height: 32px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    @include mobile {
+        a {
+            padding-top: $spacer*0.5;
+            font-size: $font-size-sm;
+            &:after {
+                height: 4px;
+                margin-top: $spacer*0.25;
+            }
+
+            img {
+                width: 16px;
+                height: 16px;
+                margin-right: 2px;
+            }
+        }
+    }
+}
+
+.product-banner {
+    li {
+        height: 304px;
+        
+        @include mobile {
+            height: 148px;
+        }
+    }
+
+    li:first-child {
+        background: url(https://hexschool.github.io/webLayoutTraining1st/week3/banner-1.png) no-repeat center;
+        background-size: cover;
+    }
+
+    li:last-child {
+        background: url(https://hexschool.github.io/webLayoutTraining1st/week3/banner-2.png) no-repeat center;
+        background-size: cover;
+    }
+}
+
+.product-list {
+    .title, .sub-title {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .sub-title {
+        font-size: $font-size-lg;
+    }
+
+    @include tablet {
+        .title {
+            font-size: $font-size-lg;
+        }
+    
+        .sub-title {
+            font-size: $h4-font-size;
+        }
+    }
+
+    @include mobile {
+        .title {
+            font-size: $h5-font-size;
+        }
+    
+        .sub-title {
+            font-size: $font-size-base;
+        }
+    }
+}
+
+.product-item {
+    width: calc((100% - 90px) / 4);
+    margin-right: 30px;
+    &:nth-child(4n) {
+        margin-right: 0px;
+    }
+    padding-bottom: $spacer*6.5;
+    
+    .name, .price {
+        font-size: $h4-font-size;
+    }
+
+    .color li {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        margin-right: $spacer*0.5;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @include tablet {
+        width: calc((100% - 30px) / 2);
+        &:nth-child(2n) {
+            margin-right: 0px;
+        }
+        padding-bottom: $spacer*4.5;
+    }
+
+    @include mobile {
+        width: 100%;
+        margin-right: 0px;
+        padding-bottom: $spacer*2;
+
+        .name, .price {
+            font-size: $font-size-base;
+        }
+
+        .color li {
+            width: 16px;
+            height: 16px;
+            margin-right: $spacer*0.25;
+        }
+    }
+}
