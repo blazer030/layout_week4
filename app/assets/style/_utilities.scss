@@ -310,6 +310,10 @@
     .w-#{$key*25} {
         width: $key*25%;
     }
+
+    .h-#{$key*25} {
+        height: $key*25%;
+    }
 }
 
 @each $breakpoints, $value in reverse($grid-breakpoints) {
@@ -319,6 +323,10 @@
             @each $key in 1,2,3,4 {
                 .w-#{$breakpoints}-#{$key*25} {
                     width: $key*25%;
+                }
+
+                .h-#{$breakpoints}-#{$key*25} {
+                    height: $key*25%;
                 }
             }
         }

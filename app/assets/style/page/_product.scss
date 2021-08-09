@@ -4,12 +4,7 @@
         padding-bottom: $spacer*6;
     }
 
-    @include tablet {
-        padding: 0 $spacer*1.5;
-    }
-
     @include mobile {
-        padding: 0;
         &.product-list {
             padding-top: $spacer*2;
             padding-bottom: $spacer*3.5;

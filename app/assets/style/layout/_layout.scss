@@ -3,6 +3,16 @@
     padding-right: 15px;
     padding-left: 15px;
     margin: 0 auto;
+
+    @include tablet {
+        padding-right: 39px;
+        padding-left: 39px;
+    }
+
+    @include mobile {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
 
 @each $color, $value in $theme-colors {

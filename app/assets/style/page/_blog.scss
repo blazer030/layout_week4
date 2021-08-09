@@ -2,7 +2,7 @@
     padding: $spacer*2.5 0 $spacer*10 0;
 
     @include tablet {
-        padding: $spacer*2 $spacer*1.5 $spacer*6 $spacer*1.5;
+        padding: $spacer*2 0 $spacer*6 0;
     }
 
     @include mobile {
@@ -14,11 +14,11 @@
     padding-bottom: $spacer*10;
 
     @include tablet {
-        padding: 0 $spacer*1.5 $spacer*6 $spacer*1.5;
+        padding-bottom: $spacer*6;
     }
 
     @include mobile {
-        padding: 0 0 $spacer*3.5 0;
+        padding-bottom: $spacer*3.5;
     }
 }
 
