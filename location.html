@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>系列鏡框</title>
+  <title>門市據點</title>
   <link rel="stylesheet" href="./assets/style/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
 </head>
@@ -17,8 +17,8 @@
         <a href="index.html"><img src="https://hexschool.github.io/webLayoutTraining1st/week3/logo.png" alt="logo"></a>
       </div>
       <ul class="menu d-flex justify-content-around text-white w-sm-100 flex-sm-wrap">
-        <li class="w-sm-50  active "><a href="products.html">系列鏡框</a></li>
-        <li class="w-sm-50 "><a href="locations.html">門市據點</a></li>
+        <li class="w-sm-50 "><a href="products.html">系列鏡框</a></li>
+        <li class="w-sm-50  active "><a href="locations.html">門市據點</a></li>
         <li class="w-sm-50 "><a href="blogs.html">部落格</a></li>
         <li class="w-sm-50 "><a href="faq.html">常見問題</a></li>
       </ul>
@@ -26,9 +26,56 @@
   </header>
   
   
-<h1>
-  系列鏡框
-</h1>
+<main>
+  <section class="location">
+    <div class="container">
+      <h1 class="page-title">
+        門市據點
+      </h1>
+      <div class="filter d-flex align-items-center justify-content-sm-between mb-8 mb-lg-6 mb-sm-5">
+        <label for="store" class="me-5 me-sm-0">選擇分店</label>
+        <select name="store" id="store">
+          <option value="台北中山旗艦店" selected>台北中山旗艦店</option>
+          <option value="台北中山旗艦店">台北中山旗艦店</option>
+          <option value="台北中山旗艦店">台北中山旗艦店</option>
+        </select>
+      </div>
+      <div class="d-flex flex-lg-wrap">
+        <div class="location-card d-flex flex-column flex-lg-row flex-sm-column mb-lg-8 mb-sm-4">
+          <div class="location-image">
+            <img src="https://hexschool.github.io/webLayoutTraining1st/week3/locate1.jpeg" alt="locate1">
+          </div>
+          <div class="location-info">
+            <div class="title">台北中山旗艦店</div>
+            <div class="content">
+              <ul class="location-detail">
+                <li>
+                  <div class="icon">
+                    <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/icon-phone-black.svg" alt="icon-phone-black">
+                  </div>
+                  <p>電話：(02)000-1234</p>
+                </li>
+                <li>
+                  <div class="icon">
+                    <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/icon-clock-black.svg" alt="icon-clock-black">
+                  </div>
+                  <p>營業時間：10:00-21:00</p>
+                </li>
+                <li>
+                  <div class="icon">
+                    <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week4/icon-map.svg" alt="icon-map">
+                  </div>
+                  <p>地址：台北市中山區南京東路25巷2-1號</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.4637552831864!2d121.53567605082458!3d25.05226618388504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abdf92494d29%3A0xd908a8a881f73476!2zMTA0OTHlj7DljJfluILkuK3lsbHljYDljZfkuqzmnbHot6_kuInmrrUyNeiZnw!5e0!3m2!1szh-TW!2stw!4v1628477615535!5m2!1szh-TW!2stw" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
 
   <footer class="footer bg-primary py-8 px-lg-6 py-sm-6 px-sm-0">
     <div class="container text-white">
