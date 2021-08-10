@@ -28,12 +28,21 @@
     }
 }
 
-.promise {
+.promise,
+.contact-us {
     background-color: #FBF2F2;
 }
 
+.co-branding {
+    background: url(https://hexschool.github.io/webLayoutTraining1st/week3/bg.png) no-repeat center;
+    background-size: cover;
+}
+
 .promise,
-.classic {
+.classic,
+.co-branding,
+.recommend,
+.contact-us {
     padding: $spacer*3.75 0 $spacer*5 0;
 
     @include tablet {
@@ -155,5 +164,166 @@
                 margin-right: 0;
             }
         }
+    }
+}
+
+.brand {
+    position: relative;
+    width: 50%;
+
+    img {
+        width: 100%;
+    }
+
+    h3 {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: $font-size-base*4.5;
+    }
+
+    &:first-child {
+        margin-right: 30px;
+    }
+
+    @include tablet {
+        h3 {
+            font-size: $font-size-lg;
+        }
+    }
+
+    @include mobile {
+        width: 100%;
+
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.comment {
+    width: calc((100% - 90px) / 4);
+    height: 460px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+    position: relative;
+
+    img {
+        width: 100%;
+        max-height: 256px;
+        object-fit: cover;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    h3, span {
+        font-size: $font-size-sm;
+    }
+
+    .date {
+        position: absolute;
+        bottom: $spacer;
+    }
+
+    @include tablet {
+        width: calc((100% - 30px) / 2);
+        &:not(:nth-last-child(-n+2)) {
+            margin-bottom: $spacer*2;
+        }
+    }
+
+    @include mobile {
+        width: 100%;
+        &:not(:nth-last-child(-n+1)) {
+            margin-bottom: $spacer;
+        }
+    }
+}
+
+.contact-form {
+    padding: 0 190px;
+    font-size: $h5-font-size;
+
+    @include tablet {
+        padding: 0 120px;
+        font-size: $font-size-base;
+    }
+
+    @include mobile {
+        padding: 0;
+    }
+}
+
+.form-group {
+    label {
+        display: block;
+        font-size: $font-size-base;
+    }
+
+    input, textarea {
+        display: block;
+        background: transparent;
+        width: 100%;
+        padding: $spacer*0.75 $spacer;
+        font-size: $font-size-base;
+        border: 1px solid #000;
+        &::placeholder {
+            color: $gray;
+            opacity: 0.5;
+        }
+    }
+
+    &.agree {
+        label {
+            display: inline;
+        }
+
+        input {
+            display: inline;
+            width: fit-content;
+        }
+    }
+
+    @include tablet {
+        label {
+            font-size: $font-size-sm;
+        }
+
+        input, textarea {
+            font-size: $font-size-sm;
+            padding: $spacer*0.5 $spacer*0.75;
+        }
+    }
+}
+
+.form-btn {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 54px;
+    font-size: $font-size-base;
+    color: white;
+    background: $primary;
+    border: 0px;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        background: $primary-dark;
+    }
+
+    @include tablet {
+        width: 210px;
+        height: 40px;
+        font-size: $font-size-sm;
+    }
+
+    @include mobile {
+        width: 165px;
+        height: 36px;
     }
 }

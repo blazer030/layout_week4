@@ -1,5 +1,9 @@
 @for $key from 0 to 16 {
     //margin
+    .m-#{$key} {
+        margin: $spacer*$key*.25;
+    }
+
     .mt-#{$key} {
         margin-top: $spacer*$key*.25;
     }
@@ -27,6 +31,10 @@
     }
 
     //padding
+    .p-#{$key} {
+        padding: $spacer*$key*.25;
+    }
+
     .pt-#{$key} {
         padding-top: $spacer*$key*.25;
     }
@@ -60,6 +68,10 @@
         @include media-breakpoint-down($next) {
             @for $key from 0 to 16 {
                 //margin
+                .m-#{$breakpoints}-#{$key} {
+                    margin: $spacer*$key*.25;
+                }
+            
                 .mt-#{$breakpoints}-#{$key} {
                     margin-top: $spacer*$key*.25;
                 }
@@ -87,6 +99,10 @@
                 }
             
                 //padding
+                .p-#{$breakpoints}-#{$key} {
+                    padding: $spacer*$key*.25;
+                }
+            
                 .pt-#{$breakpoints}-#{$key} {
                     padding-top: $spacer*$key*.25;
                 }
